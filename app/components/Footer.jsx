@@ -108,7 +108,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-5 mt-6">
 
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://www.instagram.com/looks_beard_productions?igsh=eTgyMXRhNnUwY3Qy&utm_source=qr" target="_blank">
               <Instagram className="icon-style" />
             </Link>
 
@@ -120,11 +120,11 @@ export default function Footer() {
               <MessageCircle className="icon-style" />
             </Link>
 
-            <Link href="https://facebook.com" target="_blank">
+            <Link href="https://www.facebook.com/share/1D5au6UVHj/?mibextid=wwXIfr" target="_blank">
               <Facebook className="icon-style" />
             </Link>
 
-            <Link href="https://twitter.com" target="_blank">
+            <Link href="https://x.com/looksbeard?s=21" target="_blank">
               <Twitter className="icon-style" />
             </Link>
 
@@ -159,24 +159,24 @@ export default function Footer() {
             ref={popupRef}
             className="
               absolute left-1/2 -translate-x-1/2 mt-3
-              bg-white shadow-xl rounded-lg p-3 
+              bg-[#FAF0DB] shadow-xl rounded-lg p-3 
               flex gap-4 
               border border-black/10 z-50 animate-fadeIn
             "
           >
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://www.instagram.com/kartikay_awasthi/" target="_blank">
               <Instagram className="popup-icon" />
             </Link>
 
-            <Link href="https://facebook.com" target="_blank">
+            <Link href="https://www.facebook.com/ikartikayawasthi/" target="_blank">
               <Facebook className="popup-icon" />
             </Link>
 
-            <Link href="https://twitter.com" target="_blank">
+            <Link href="https://x.com/ikartikawasthi" target="_blank">
               <Twitter className="popup-icon" />
             </Link>
 
-            <Link href="https://linkedin.com" target="_blank">
+            <Link href="https://www.linkedin.com/in/KartikayAwasthi/" target="_blank">
               <Linkedin className="popup-icon" />
             </Link>
           </div>
