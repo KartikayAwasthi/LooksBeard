@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Services from "./components/Services";
 import Work from "./components/Work";
+import ContactFrom from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -32,6 +33,8 @@ export default function Home() {
       <Services/>
 
       <Work/>
+
+      <ContactFrom/>
 
       
 
