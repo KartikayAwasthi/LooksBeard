@@ -3,6 +3,8 @@ import Link from "next/link";
 import Services from "./components/Services";
 import Work from "./components/Work";
 import ContactFrom from "./components/ContactForm";
+import About from "./components/About";
+
 
 export default function Home() {
   return (
@@ -33,6 +35,9 @@ export default function Home() {
       <Services/>
 
       <Work/>
+
+      <About />
+
 
       <ContactFrom/>
 
