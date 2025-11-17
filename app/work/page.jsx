@@ -40,6 +40,30 @@ export default function WorkPage() {
       emoji: "📽️",
       video: "/video/Veet.mp4",
     },
+    {
+      title:"The art of Hand",
+      tag: "Commercial Video",
+      emoji:"",
+      video:"/video/arthand.mp4",
+    },
+    {
+      title:"The art of Hand",
+      tag: "Commercial Video",
+      emoji:"",
+      video:"/video/Deco.mp4",
+    },
+    {
+      title:"The art of Hand",
+      tag: "Commercial Video",
+      emoji:"",
+      video:"/video/Decoy.mp4",
+    },
+    {
+      title:"The art of Hand",
+      tag: "Commercial Video",
+      emoji:"",
+      video:"/video/Vidya.mp4",
+    }
   ];
 
   return (
