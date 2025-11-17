@@ -1,12 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-
-// export const metadata = {
-//   title: "Our Work — Looksbeard Productions",
-//   description:
-//     "A cinematic showcase of our best video editing, motion graphics, sound design, and creative production work.",
-// };
+import { useRef, useEffect } from "react";
 
 export default function WorkPage() {
   const projects = [
@@ -71,7 +65,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* PROJECT GRID */}
+      {/* PROJECTS GRID */}
       <section className="w-full px-6">
         <div className="grid md:grid-cols-3 gap-12">
           {projects.map((item, index) => (
@@ -93,6 +87,7 @@ export default function WorkPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <div className="w-full text-center mt-28">
         <a
           href="/contact"
@@ -110,20 +105,52 @@ export default function WorkPage() {
 function ProjectVideoCard({ item }) {
   const videoRef = useRef(null);
 
+  /* DESKTOP BEHAVIOR (HOVER AUDIO + RESTART) */
   const handleEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0; // 🔥 Restart video from beginning
-      videoRef.current.muted = false;   // Sound ON
+    if (videoRef.current && window.innerWidth > 768) {
+      videoRef.current.currentTime = 0;   // restart
+      videoRef.current.muted = false;     // unmute
+      videoRef.current.volume = 1;        // full volume
       videoRef.current.play();
     }
   };
 
   const handleLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = true; // Sound OFF
-      videoRef.current.play();
+    if (videoRef.current && window.innerWidth > 768) {
+      videoRef.current.muted = true;      // mute
+      videoRef.current.volume = 0;        // no sound
     }
   };
+
+  /* MOBILE SCROLL BEHAVIOR (AUTO AUDIO LIKE INSTAGRAM) */
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const visible = entry.isIntersecting;
+
+          if (window.innerWidth <= 768) {
+            if (visible) {
+              video.muted = false;         // audio ON
+              video.volume = 1;
+              video.play();
+            } else {
+              video.muted = true;          // audio OFF
+              video.volume = 0;
+            }
+          }
+        });
+      },
+      { threshold: 0.6 } // 60% visible = active
+    );
+
+    observer.observe(video);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
@@ -134,15 +161,12 @@ function ProjectVideoCard({ item }) {
       <video
         ref={videoRef}
         src={item.video}
-        className="w-full h-96 object-cover rounded-2xl shadow-lg"  // 🔥 BIGGER CARD
+        className="w-full h-96 object-cover rounded-2xl shadow-xl"
         muted
         autoPlay
         loop
         playsInline
       />
-
-      <div className="shine" />
     </div>
   );
 }
-
