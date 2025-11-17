@@ -1,46 +1,50 @@
-export const metadata = {
-  title: "Our Work — Looksbeard Productions",
-  description:
-    "A cinematic showcase of our best video editing, motion graphics, sound design, and creative production work.",
-};
+"use client";
+
+import { useRef } from "react";
+
+// export const metadata = {
+//   title: "Our Work — Looksbeard Productions",
+//   description:
+//     "A cinematic showcase of our best video editing, motion graphics, sound design, and creative production work.",
+// };
 
 export default function WorkPage() {
   const projects = [
     {
-      title: "Cinematic Travel Edit",
-      tag: "Cinematic Edit",
+      title: "Acharya Promo Edit",
+      tag: "Commercial Edit",
       emoji: "🎞️",
-      thumb: "/images/work/cinematic1.jpg",
+      video: "/video/Acharaya.mp4",
     },
     {
-      title: "Logo Animation Reveal",
-      tag: "Motion Graphics",
+      title: "Glow Product Ad",
+      tag: "Product Advertisement",
       emoji: "✨",
-      thumb: "/images/work/motion1.jpg",
+      video: "/video/Glow.mp4",
     },
     {
-      title: "Product Advertisement",
-      tag: "Commercial Video",
-      emoji: "📦",
-      thumb: "/images/work/product1.jpg",
+      title: "Glowtime Energy Edit",
+      tag: "High Energy Edit",
+      emoji: "⚡",
+      video: "/video/Glowtime.mp4",
     },
     {
-      title: "Music Visualizer",
-      tag: "Audio Reactive",
-      emoji: "🎧",
-      thumb: "/images/work/music1.jpg",
+      title: "JioMart Creative Edit",
+      tag: "Branding Edit",
+      emoji: "🛒",
+      video: "/video/JioMart.mp4",
     },
     {
-      title: "Corporate Branding Edit",
-      tag: "Corporate Edit",
-      emoji: "🏢",
-      thumb: "/images/work/corporate1.jpg",
-    },
-    {
-      title: "Dynamic Reels Edit",
-      tag: "Social Media",
+      title: "The Booyah Gaming Edit",
+      tag: "Gaming Edit",
       emoji: "🔥",
-      thumb: "/images/work/reels1.jpg",
+      video: "/video/TheBooyah.mp4",
+    },
+    {
+      title: "Veet Ad Film Edit",
+      tag: "Commercial Video",
+      emoji: "📽️",
+      video: "/video/Veet.mp4",
     },
   ];
 
@@ -58,7 +62,6 @@ export default function WorkPage() {
           we’ve crafted for creators and brands worldwide.
         </p>
 
-        {/* Emoji Row */}
         <div className="flex justify-center gap-6 mt-10">
           <span className="emoji-badge animate-float delay-0">🎞️</span>
           <span className="emoji-badge animate-pop delay-150">✨</span>
@@ -77,19 +80,8 @@ export default function WorkPage() {
               className="project-card animate-stagger"
               style={{ animationDelay: `${index * 120}ms` }}
             >
-              {/* Thumbnail */}
-              <div className="project-thumb relative">
-                <img
-                  src={item.thumb}
-                  alt={item.title}
-                  className="w-full h-64 object-cover rounded-xl"
-                />
+              <ProjectVideoCard item={item} />
 
-                {/* Hover Shine */}
-                <div className="shine" />
-              </div>
-
-              {/* Text */}
               <div className="mt-4">
                 <span className="text-[#FAF0DB] text-sm uppercase tracking-wide">
                   {item.tag} {item.emoji}
@@ -101,7 +93,6 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <div className="w-full text-center mt-28">
         <a
           href="/contact"
@@ -111,5 +102,45 @@ export default function WorkPage() {
         </a>
       </div>
     </main>
+  );
+}
+
+/* ---------------- VIDEO CARD COMPONENT ---------------- */
+
+function ProjectVideoCard({ item }) {
+  const videoRef = useRef(null);
+
+  const handleEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false; // turn sound ON
+      videoRef.current.play();
+    }
+  };
+
+  const handleLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = true; // turn sound OFF
+      videoRef.current.play();
+    }
+  };
+
+  return (
+    <div
+      className="project-thumb relative"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
+      <video
+        ref={videoRef}
+        src={item.video}
+        className="w-full h-64 object-cover rounded-xl"
+        muted
+        autoPlay
+        loop
+        playsInline
+      />
+
+      <div className="shine" />
+    </div>
   );
 }

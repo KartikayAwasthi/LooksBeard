@@ -1,48 +1,148 @@
-import Link from "next/link";
+"use client";
 
-export default function WorkSection() {
+import { useRef } from "react";
+
+// export const metadata = {
+//   title: "Our Work — Looksbeard Productions",
+//   description:
+//     "A cinematic showcase of our best video editing, motion graphics, sound design, and creative production work.",
+// };
+
+export default function WorkPage() {
   const projects = [
-    { id: 1, title: "Cinematic Project 1", thumb: "/images/work1.jpg" },
-    { id: 2, title: "Cinematic Project 2", thumb: "/images/work2.jpg" },
-    { id: 3, title: "Cinematic Project 3", thumb: "/images/work3.jpg" },
+    {
+      title: "Acharya Promo Edit",
+      tag: "Commercial Edit",
+      emoji: "🎞️",
+      video: "/video/Acharaya.mp4",
+    },
+    {
+      title: "Glow Product Ad",
+      tag: "Product Advertisement",
+      emoji: "✨",
+      video: "/video/Glow.mp4",
+    },
+    {
+      title: "Glowtime Energy Edit",
+      tag: "High Energy Edit",
+      emoji: "⚡",
+      video: "/video/Glowtime.mp4",
+    },
+    {
+      title: "JioMart Creative Edit",
+      tag: "Branding Edit",
+      emoji: "🛒",
+      video: "/video/JioMart.mp4",
+    },
+    {
+      title: "The Booyah Gaming Edit",
+      tag: "Gaming Edit",
+      emoji: "🔥",
+      video: "/video/TheBooyah.mp4",
+    },
+    {
+      title: "Veet Ad Film Edit",
+      tag: "Commercial Video",
+      emoji: "📽️",
+      video: "/video/Veet.mp4",
+    },
   ];
 
   return (
-    <section className="py-24 px-6 fade-in">
-      <h2 className="text-3xl md:text-4xl font-bold text-center glow-text mb-12">
-        Featured Work 🎬🔥
-      </h2>
+    <main className="pt-40 pb-32 w-full">
 
-      {/* Project Grid */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
-          <div
-            key={i}
-            className="relative group h-60 rounded-xl overflow-hidden bg-[#1a1a1a] border border-white/10 project-card animate-stagger"
-            style={{ animationDelay: `${i * 120}ms` }}
-          >
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+      {/* HERO */}
+      <section className="text-center mb-20">
+        <h1 className="text-5xl md:text-6xl font-extrabold glow-text animate-fadeIn">
+          Our Work 🎬🔥
+        </h1>
 
-            {/* Title */}
-            <p className="absolute bottom-4 left-4 text-white/90 text-sm tracking-wide">
-              {project.title}
-            </p>
+        <p className="text-white/70 text-xl max-w-3xl mx-auto mt-5 animate-slideUp">
+          A curated collection of the edits, animations, sound design, and production work
+          we’ve crafted for creators and brands worldwide.
+        </p>
 
-            {/* Shine effect */}
-            <div className="shine-effect"></div>
-          </div>
-        ))}
+        <div className="flex justify-center gap-6 mt-10">
+          <span className="emoji-badge animate-float delay-0">🎞️</span>
+          <span className="emoji-badge animate-pop delay-150">✨</span>
+          <span className="emoji-badge animate-float delay-300">🎧</span>
+          <span className="emoji-badge animate-pop delay-450">🔥</span>
+          <span className="emoji-badge animate-float delay-600">📽️</span>
+        </div>
+      </section>
+
+      {/* PROJECT GRID */}
+      <section className="w-full px-6">
+        <div className="grid md:grid-cols-3 gap-12">
+          {projects.map((item, index) => (
+            <div
+              key={index}
+              className="project-card animate-stagger"
+              style={{ animationDelay: `${index * 120}ms` }}
+            >
+              <ProjectVideoCard item={item} />
+
+              <div className="mt-4">
+                <span className="text-[#FAF0DB] text-sm uppercase tracking-wide">
+                  {item.tag} {item.emoji}
+                </span>
+                <h3 className="text-2xl font-semibold mt-2">{item.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="w-full text-center mt-28">
+        <a
+          href="/contact"
+          className="inline-block px-12 py-4 rounded-full bg-[#FAF0DB] text-black font-semibold text-lg shadow-xl hover:scale-105 transition"
+        >
+          Work With Us ✨
+        </a>
       </div>
-
-      {/* CTA */}
-      <div className="flex justify-center mt-12">
-        <Link href="/work">
-          <button className="bg-[#FAF0DB] text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition">
-            View Portfolio →
-          </button>
-        </Link>
-      </div>
-    </section>
+    </main>
   );
 }
+
+/* ---------------- VIDEO CARD COMPONENT ---------------- */
+
+function ProjectVideoCard({ item }) {
+  const videoRef = useRef(null);
+
+  const handleEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0; // 🔥 Restart video from beginning
+      videoRef.current.muted = false;   // Sound ON
+      videoRef.current.play();
+    }
+  };
+
+  const handleLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = true; // Sound OFF
+      videoRef.current.play();
+    }
+  };
+
+  return (
+    <div
+      className="project-thumb relative cursor-pointer"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
+      <video
+        ref={videoRef}
+        src={item.video}
+        className="w-full h-96 object-cover rounded-2xl shadow-lg"  // 🔥 BIGGER CARD
+        muted
+        autoPlay
+        loop
+        playsInline
+      />
+
+      <div className="shine" />
+    </div>
+  );
+}
+
