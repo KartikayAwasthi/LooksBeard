@@ -264,17 +264,35 @@ export default function WorkPage() {
   );
 }
 
-/* ---------------- VIDEO CARD COMPONENT ---------------- */
+/* ---------------- VIDEO CARD COMPONENT (UPDATED WITH LOADER) ---------------- */
 
 function ProjectVideoCard({ item, index, userInteracted, videoRef, isLazy }) {
   const localVideoRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
-  // combine refs: store local and propagate to parent via callback
+  // expose ref to parent
   useEffect(() => {
     if (typeof videoRef === "function") videoRef(localVideoRef.current);
   }, [videoRef]);
 
-  // Desktop hover: play (muted first) then unmute only if userInteracted true
+  /* ---------------------- VIDEO LOADER ---------------------- */
+  useEffect(() => {
+    const video = localVideoRef.current;
+    if (!video) return;
+
+    const onLoaded = () => setLoading(false);
+    const onStart = () => setLoading(false);
+
+    video.addEventListener("loadeddata", onLoaded);
+    video.addEventListener("playing", onStart);
+
+    return () => {
+      video.removeEventListener("loadeddata", onLoaded);
+      video.removeEventListener("playing", onStart);
+    };
+  }, []);
+
+  /* ---------------------- DESKTOP HOVER PLAY ---------------------- */
   const handleEnter = async () => {
     const video = localVideoRef.current;
     if (!video || window.innerWidth <= 768) return;
@@ -282,16 +300,14 @@ function ProjectVideoCard({ item, index, userInteracted, videoRef, isLazy }) {
     video.currentTime = 0;
     video.muted = true;
     video.volume = 0;
+
     try {
       await video.play();
       if (userInteracted) {
         video.muted = false;
         video.volume = 1;
-      } else {
-        video.muted = true;
       }
-    } catch (err) {
-      // ignore play permission errors
+    } catch (e) {
       video.muted = true;
     }
   };
@@ -299,54 +315,41 @@ function ProjectVideoCard({ item, index, userInteracted, videoRef, isLazy }) {
   const handleLeave = () => {
     const video = localVideoRef.current;
     if (!video || window.innerWidth <= 768) return;
+
+    video.pause();
+    video.currentTime = 0;
     video.muted = true;
     video.volume = 0;
   };
 
-  // Mobile intersection observer for autoplay/pause (muted)
+  /* ---------------------- MOBILE AUTOPLAY + PAUSE ---------------------- */
   useEffect(() => {
     const video = localVideoRef.current;
     if (!video) return;
 
     if (window.innerWidth <= 768) {
-      const obs = new IntersectionObserver(
+      const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach(async (entry) => {
             if (entry.isIntersecting) {
-              // if video still has data-src (lazy), let the page-level lazy observer set src
-              if (!video.src && video.dataset && video.dataset.src) {
-                // do nothing; page-level observer will set src then play
-              } else {
-                video.muted = true;
-                video.volume = 0;
-                try {
-                  await video.play();
-                } catch (e) {}
-              }
+              video.muted = true;
+              try { await video.play(); } catch (e) {}
             } else {
-              try {
-                video.pause();
-              } catch (e) {}
+              try { video.pause(); } catch (e) {}
             }
           });
         },
-        { threshold: 0.6 }
+        { threshold: 0.55 }
       );
 
-      obs.observe(video);
-      return () => obs.disconnect();
-    } else {
-      // Desktop: ensure paused initially
-      try {
-        video.pause();
-      } catch (e) {}
+      observer.observe(video);
+      return () => observer.disconnect();
     }
   }, []);
 
-  // Render: first 6 have src; lazy ones get data-src
   const videoProps = isLazy
     ? { "data-src": item.video, preload: "none" }
-    : { src: item.video, preload: "metadata", autoPlay: typeof window !== "undefined" && window.innerWidth <= 768 };
+    : { src: item.video, preload: "metadata" };
 
   return (
     <div
@@ -355,6 +358,13 @@ function ProjectVideoCard({ item, index, userInteracted, videoRef, isLazy }) {
       onMouseLeave={handleLeave}
       onFocus={handleEnter}
     >
+      {/* LOADER */}
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/40 z-10">
+          <div className="w-10 h-10 border-4 border-white/20 border-t-white rounded-full animate-spin"></div>
+        </div>
+      )}
+
       <video
         ref={localVideoRef}
         className="w-full h-full object-cover"
@@ -364,6 +374,7 @@ function ProjectVideoCard({ item, index, userInteracted, videoRef, isLazy }) {
         {...videoProps}
       />
 
+      {/* OVERLAYS */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"

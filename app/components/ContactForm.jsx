@@ -15,10 +15,7 @@ export default function ContactSection() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden pt-32 pb-16">
 
-      {/* BACKGROUND LAYERS */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f0f] via-black to-[#1a0f07] opacity-95"></div>
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
-
+      
       {/* ✨ SECTION HEADING */}
       <div className="relative z-20 text-center animate-slideUp px-4">
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#FAF0DB] drop-shadow-[0_3px_10px_rgba(0,0,0,0.8)]">
