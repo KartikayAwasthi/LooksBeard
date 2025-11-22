@@ -14,7 +14,7 @@ export default function Hero() {
         </p>
 
         <Link href="/contact">
-          <button className="mt-8 bg-[#FAF0DB] text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition">
+          <button className="mt-8 bg-[#eaeaea] text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition">
             Start Your Project
           </button>
         </Link>

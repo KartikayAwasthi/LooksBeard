@@ -155,7 +155,7 @@ export default function AboutPage() {
         <div className="relative max-w-5xl mx-auto px-6">
           <h1 className="text-6xl md:text-8xl font-extrabold leading-tight">
             We Create Cinematic
-            <span className="text-[#FAF0DB] block">Digital Experiences</span>
+            <span className="text-[#eaeaea] block">Digital Experiences</span>
           </h1>
 
           <p className="text-white/60 text-xl md:text-2xl mt-6">
@@ -286,7 +286,7 @@ export default function AboutPage() {
       <section ref={addFade} className="text-center py-20">
         <a
           href="/contact"
-          className="inline-block px-14 py-5 bg-[#FAF0DB] text-black font-semibold text-lg rounded-full shadow-xl hover:scale-105 transition"
+          className="inline-block px-14 py-5 bg-[#eaeaea] text-black font-semibold text-lg rounded-full shadow-xl hover:scale-105 transition"
         >
           Let’s Create Something Remarkable ✨
         </a>

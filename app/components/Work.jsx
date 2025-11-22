@@ -164,7 +164,7 @@ export default function WorkPage() {
         <h1 className="work-hero text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
           <span className="inline-block mr-3">Our Work</span>
           <span className="inline-block glow-text">🎬</span>
-          <span className="ml-3 text-[#FAF0DB] text-lg font-medium">Viral Reels Grid</span>
+          <span className="ml-3 text-[#eaeaea] text-lg font-medium">Viral Reels Grid</span>
         </h1>
 
         <p className="text-white/70 text-base sm:text-lg max-w-3xl mx-auto mt-4">
@@ -204,7 +204,7 @@ export default function WorkPage() {
               />
               <div className="p-4 md:p-5">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm uppercase tracking-wider text-[#FAF0DB]">
+                  <span className="text-sm uppercase tracking-wider text-[#eaeaea]">
                     {item.tag} <span className="ml-2">{item.emoji}</span>
                   </span>
                 </div>
@@ -219,7 +219,7 @@ export default function WorkPage() {
           <div className="flex justify-center mt-8">
             <button
               onClick={handleViewMore}
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#FAF0DB] text-black font-semibold text-base shadow-2xl transform-gpu hover:scale-105 transition"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#eaeaea] text-black font-semibold text-base shadow-2xl transform-gpu hover:scale-105 transition"
               aria-expanded={expanded}
             >
               View More
@@ -235,7 +235,7 @@ export default function WorkPage() {
       <div className="w-full text-center mt-12">
         <a
           href="/contact"
-          className="inline-block px-10 py-3 rounded-full bg-[#FAF0DB] text-black font-semibold text-base shadow-2xl hover:scale-105 transform transition"
+          className="inline-block px-10 py-3 rounded-full bg-[#eaeaea] text-black font-semibold text-base shadow-2xl hover:scale-105 transform transition"
         >
           Work With Us ✨
         </a>
@@ -244,7 +244,7 @@ export default function WorkPage() {
       {/* small style tweaks */}
       <style jsx>{`
         .glow-text {
-          color: #faf0db;
+          color: #eaeaea;
           text-shadow:
             0 1px 0 rgba(255,255,255,0.03),
             0 6px 30px rgba(250,240,219,0.06),
@@ -254,7 +254,7 @@ export default function WorkPage() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          color: #faf0db;
+          color: #eaeaea;
           background: rgba(255,255,255,0.02);
           backdrop-filter: blur(6px);
         }
@@ -384,7 +384,7 @@ function ProjectVideoCard({ item, index, userInteracted, videoRef, isLazy }) {
         }}
       />
 
-      <div className="absolute left-3 top-3 px-2 py-1 rounded-md bg-black/40 text-xs text-[#FAF0DB] backdrop-blur-sm">
+      <div className="absolute left-3 top-3 px-2 py-1 rounded-md bg-black/40 text-xs text-[#eaeaea] backdrop-blur-sm">
         {item.emoji}
       </div>
 

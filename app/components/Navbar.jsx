@@ -20,7 +20,7 @@ export default function Navbar() {
       className={`
         fixed top-0 left-0 w-full z-50 transition-all duration-300
         ${isScrolled ? "shadow-lg" : ""}
-        bg-[#faf0db]
+        bg-[#eaeaea]
       `}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -88,7 +88,7 @@ function MobileMenu() {
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 w-full bg-[#FAF0DB] flex flex-col text-black py-6 px-6 space-y-5 text-lg shadow-md font-bold">
+        <div className="absolute top-full left-0 w-full bg-[#eaeaea] flex flex-col text-black py-6 px-6 space-y-5 text-lg shadow-md font-bold">
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setOpen(false)}>About</Link>
           <Link href="/services" onClick={() => setOpen(false)}>Services</Link>

@@ -144,7 +144,7 @@ export default function ServicesPage() {
       <section className="w-full text-center mt-28">
         <a
           href="/contact"
-          className="inline-block px-14 py-4 rounded-full bg-[#FAF0DB] text-black text-lg font-semibold shadow-lg hover:scale-105 transition"
+          className="inline-block px-14 py-4 rounded-full bg-[#eaeaea] text-black text-lg font-semibold shadow-lg hover:scale-105 transition"
         >
           Start Your Project With Us ✨
         </a>

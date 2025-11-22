@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer
       className="
-        bg-[#FAF0DB]
+        bg-[#eaeaea]
         shadow-[0_0_25px_rgba(255,255,255,0.8)]
         text-black py-16 px-6 mt-32 relative
       "
@@ -97,14 +97,62 @@ export default function Footer() {
 
         {/* CONTACT + SOCIAL ICONS */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
+        <h3 className="text-lg font-semibold mb-4">Reach Us</h3>
 
-          <p className="text-black/70 text-sm mb-4">
-            Email:{" "}
-            <a href="mailto:looksbeard@gmail.com" className="hover:text-black">
-              looksbeard98@gmail.com
-            </a>
-          </p>
+{/* Email */}
+<p className="text-black/70 text-sm mb-4 flex items-center gap-2">
+  {/* Email Icon */}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.7}
+    stroke="currentColor"
+    className="w-4 h-4 text-black"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5A2.25 2.25 0 002.25 6.75m19.5 0L12 12 2.25 6.75"
+    />
+  </svg>
+
+  <a href="mailto:looksbeard@gmail.com" className="hover:text-black">
+    looksbeard98@gmail.com
+  </a>
+</p>
+
+{/* Contact */}
+<p className="text-black/70 text-sm mb-4 flex items-start gap-2">
+  {/* Phone Icon */}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.7}
+    stroke="currentColor"
+    className="w-4 h-4 text-black mt-1"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-2.17a1.5 1.5 0 00-1.144-1.454l-3.494-.874a1.5 1.5 0 00-1.622.684l-.97 1.618a11.95 11.95 0 01-5.302-5.302l1.618-.97a1.5 1.5 0 00.684-1.622L8.624 3.64A1.5 1.5 0 007.17 2.25H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+    />
+  </svg>
+
+  <span className="flex flex-col">
+    <a href="tel:+918299137922" className="hover:text-black">
+      +91 8299137922
+    </a>
+    <a href="tel:+917007766858" className="hover:text-black">
+      +91 7007766858
+    </a>
+  </span>
+</p>
+
+
+
+
 
           <div className="flex items-center gap-5 mt-6">
 
@@ -116,9 +164,11 @@ export default function Footer() {
               <Youtube className="icon-style" />
             </Link>
 
-            <Link href="https://wa.me/910000000000" target="_blank">
+            <Link href="https://wa.me/918299137922" target="_blank">
               <MessageCircle className="icon-style" />
             </Link>
+
+            
 
             <Link href="https://www.facebook.com/share/1D5au6UVHj/?mibextid=wwXIfr" target="_blank">
               <Facebook className="icon-style" />
@@ -159,7 +209,7 @@ export default function Footer() {
             ref={popupRef}
             className="
               absolute left-1/2 -translate-x-1/2 mt-3
-              bg-[#FAF0DB] shadow-xl rounded-lg p-3 
+              bg-[#eaeaea] shadow-xl rounded-lg p-3 
               flex gap-4 
               border border-black/10 z-50 animate-fadeIn
             "

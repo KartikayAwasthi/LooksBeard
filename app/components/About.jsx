@@ -95,7 +95,7 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] via-black to-[#0a0a0a]" />
 
         <div className="relative z-10">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-[#FAF0DB] tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-[#eaeaea] tracking-tight">
             We Create Cinematic Magic 🎬
           </h1>
 
@@ -125,7 +125,7 @@ export default function About() {
 
         {/* LEFT */}
         <div ref={addToSlide} className="p-16 bg-[#0c0c0c] border-y border-white/10">
-          <h2 className="text-4xl md:text-5xl text-[#FAF0DB] font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl text-[#eaeaea] font-bold mb-6">
             Who We Are 🧑‍🎨
           </h2>
 
@@ -172,7 +172,7 @@ export default function About() {
       <div className="grid md:grid-cols-2 w-full">
 
         <div ref={addToSlide} className="p-16 bg-black border-b border-white/10">
-          <h3 className="text-4xl font-semibold text-[#FAF0DB] mb-4">Our Mission 🚀</h3>
+          <h3 className="text-4xl font-semibold text-[#eaeaea] mb-4">Our Mission 🚀</h3>
           <p className="text-white/80 text-xl leading-relaxed">
             To empower brands and creators through cinematic visuals that inspire, engage,
             and captivate audiences globally.
@@ -180,7 +180,7 @@ export default function About() {
         </div>
 
         <div ref={addToSlide} className="p-16 bg-[#0d0d0d] border-b border-white/10">
-          <h3 className="text-4xl font-semibold text-[#FAF0DB] mb-4">Our Vision 🌍✨</h3>
+          <h3 className="text-4xl font-semibold text-[#eaeaea] mb-4">Our Vision 🌍✨</h3>
           <p className="text-white/80 text-xl leading-relaxed">
             To be a globally renowned creative production studio known for innovation,
             emotional storytelling, and unforgettable visuals.
@@ -192,7 +192,7 @@ export default function About() {
           SECTION 4 — CORE VALUES GRID
       ============================ */}
       <div className="w-full py-24 px-8">
-        <h3 ref={addToFade} className="text-5xl font-bold text-center text-[#FAF0DB] mb-16">
+        <h3 ref={addToFade} className="text-5xl font-bold text-center text-[#eaeaea] mb-16">
           Core Values 💡🔥
         </h3>
 
@@ -211,7 +211,7 @@ export default function About() {
               className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center"
             >
               <div className="text-4xl mb-4">{emoji}</div>
-              <h4 className="text-2xl font-semibold text-[#FAF0DB] mb-2">
+              <h4 className="text-2xl font-semibold text-[#eaeaea] mb-2">
                 {title}
               </h4>
               <p className="text-white/70">{desc}</p>
@@ -226,7 +226,7 @@ export default function About() {
       <div ref={addToFade} className="w-full text-center py-20 bg-black">
         <a
           href="/contact"
-          className="px-12 py-4 rounded-full bg-[#FAF0DB] text-black font-semibold text-lg shadow-lg hover:scale-105 transition"
+          className="px-12 py-4 rounded-full bg-[#eaeaea] text-black font-semibold text-lg shadow-lg hover:scale-105 transition"
         >
           Work With Us ✨
         </a>

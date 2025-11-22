@@ -130,7 +130,7 @@ export default function ServicesSection() {
           Heading
       ============================ */}
       <div className="text-center mb-20">
-        <h2 className="services-heading text-5xl md:text-6xl font-extrabold text-[#FAF0DB]">
+        <h2 className="services-heading text-5xl md:text-6xl font-extrabold text-[#eaeaea]">
           Our Services
         </h2>
 
@@ -164,7 +164,7 @@ export default function ServicesSection() {
             className="rounded-3xl p-10 bg-white/5 border border-white/10 shadow-lg hover:shadow-2xl transition relative group backdrop-blur-xl"
           >
             {/* Glow ring */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#FAF0DB]/20 to-transparent rounded-3xl"></div>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#eaeaea]/20 to-transparent rounded-3xl"></div>
 
             {/* Emoji */}
             <div
@@ -175,7 +175,7 @@ export default function ServicesSection() {
               {item.emoji}
             </div>
 
-            <h3 className="text-2xl font-bold mb-3 text-[#FAF0DB]">{item.title}</h3>
+            <h3 className="text-2xl font-bold mb-3 text-[#eaeaea]">{item.title}</h3>
 
             <p className="text-white/70 text-lg leading-relaxed">{item.desc}</p>
           </div>
@@ -186,7 +186,7 @@ export default function ServicesSection() {
       <div className="text-center mt-24">
         <a
           href="/contact"
-          className="inline-block px-14 py-4 bg-[#FAF0DB] text-black rounded-full text-lg font-semibold shadow-xl hover:scale-105 transition"
+          className="inline-block px-14 py-4 bg-[#eaeaea] text-black rounded-full text-lg font-semibold shadow-xl hover:scale-105 transition"
         >
           Start Your Project 🚀
         </a>

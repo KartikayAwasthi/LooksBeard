@@ -18,7 +18,7 @@ export default function ContactSection() {
       
       {/* ✨ SECTION HEADING */}
       <div className="relative z-20 text-center animate-slideUp px-4">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#FAF0DB] drop-shadow-[0_3px_10px_rgba(0,0,0,0.8)]">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#eaeaea] drop-shadow-[0_3px_10px_rgba(0,0,0,0.8)]">
           Get In Touch
         </h1>
 
@@ -47,7 +47,7 @@ export default function ContactSection() {
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-wide">
             Let's Create  
             <br />
-            <span className="text-[#FAF0DB]">Something Unforgettable</span>
+            <span className="text-[#eaeaea]">Something Unforgettable</span>
           </h2>
 
           <p className="text-white/60 text-lg leading-relaxed max-w-md">
@@ -57,13 +57,14 @@ export default function ContactSection() {
 
           {/* CONTACT INFO */}
           <div className="pt-6 space-y-4 text-white/70">
-            <p className="flex items-center gap-3"><Mail size={18}/> contact@looksbeard.com</p>
-            <p className="flex items-center gap-3"><Phone size={18}/> +91 9876543210</p>
+            <p className="flex items-center gap-3"><Mail size={18}/> looksbeard98@gmail.com</p>
+            <p className="flex items-center gap-3"><Phone size={18}/> +91 8299137922</p>
+             <p className="flex items-center gap-3"><Phone size={18}/> +91 7007766858</p>
             <p className="flex items-center gap-3"><MapPin size={18}/> India • Worldwide Projects</p>
           </div>
 
           {/* Floating light effect */}
-          <div className="w-32 h-1 bg-[#FAF0DB] rounded-full mt-10 animate-pulse"></div>
+          <div className="w-32 h-1 bg-[#eaeaea] rounded-full mt-10 animate-pulse"></div>
         </div>
 
         {/* --------------------------------------------
@@ -81,8 +82,8 @@ export default function ContactSection() {
           {/* Glow behind form */}
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 to-transparent blur-2xl -z-10"></div>
 
-          <h2 className="text-3xl font-bold mb-8 text-[#FAF0DB] tracking-wide">
-            Send a Message ✨
+          <h2 className="text-3xl font-bold mb-8 text-[#eaeaea] tracking-wide">
+            Send a Message 
           </h2>
 
           <div className="space-y-8">
@@ -94,7 +95,7 @@ export default function ContactSection() {
           <MagneticButton>
             <button
               className="
-                w-full bg-[#FAF0DB] text-black font-semibold py-3 
+                w-full bg-[#eaeaea] text-black font-semibold py-3 
                 rounded-xl transition-all duration-300 mt-8
                 hover:bg-white hover:shadow-[0_8px_30px_rgba(255,255,255,0.4)]
               "
@@ -129,14 +130,14 @@ function FloatingInput({ label, type = "text" }) {
         className="
           w-full bg-transparent border-b border-white/40
           py-3 text-white peer outline-none
-          focus:border-[#FAF0DB] transition-all duration-300
+          focus:border-[#eaeaea] transition-all duration-300
         "
       />
       <label
         className="
           absolute left-0 top-3 text-white/50 text-sm
-          peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FAF0DB]
-          peer-valid:-top-4 peer-valid:text-xs peer-valid:text-[#FAF0DB]
+          peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#eaeaea]
+          peer-valid:-top-4 peer-valid:text-xs peer-valid:text-[#eaeaea]
           transition-all duration-300
           pointer-events-none
         "
@@ -159,14 +160,14 @@ function FloatingTextarea({ label, rows }) {
         className="
           w-full bg-transparent border-b border-white/40
           py-3 text-white peer outline-none resize-none
-          focus:border-[#FAF0DB] transition-all duration-300
+          focus:border-[#eaeaea] transition-all duration-300
         "
       ></textarea>
       <label
         className="
           absolute left-0 top-3 text-white/50 text-sm
-          peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FAF0DB]
-          peer-valid:-top-4 peer-valid:text-xs peer-valid:text-[#FAF0DB]
+          peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#eaeaea]
+          peer-valid:-top-4 peer-valid:text-xs peer-valid:text-[#eaeaea]
           transition-all duration-300
           pointer-events-none
         "
@@ -186,10 +187,10 @@ function SocialIcon({ icon, href }) {
       href={href}
       target="_blank"
       className="
-        text-white/70 hover:text-[#FAF0DB]
+        text-white/70 hover:text-[#eaeaea]
         transition-all duration-300
         p-3 rounded-full border border-white/10
-        hover:border-[#FAF0DB] hover:shadow-[0_0_20px_rgba(255,240,219,0.4)]
+        hover:border-[#eaeaea] hover:shadow-[0_0_20px_rgba(234,234,234,0.4)]
         backdrop-blur-lg
       "
     >
@@ -252,7 +253,7 @@ function SpotlightEffect() {
     <div
       ref={ref}
       className="pointer-events-none fixed w-[300px] h-[300px] rounded-full 
-                 bg-[#FAF0DB]/8 blur-3xl opacity-60 mix-blend-screen"
+                 bg-[#eaeaea]/8 blur-3xl opacity-60 mix-blend-screen"
     />
   );
 }

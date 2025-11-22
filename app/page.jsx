@@ -23,7 +23,7 @@ export default function Home() {
           </p>
 
           <Link href="/contact">
-            <button className="mt-8 bg-[#FAF0DB] text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition">
+            <button className="mt-8 bg-[#eaeaea] text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition">
               Start Your Project
             </button>
           </Link>
@@ -49,7 +49,7 @@ export default function Home() {
 
 function ServiceCard({ title, desc }) {
   return (
-    <div className="bg-[#111] border border-white/10 rounded-xl p-8 hover:border-[#FAF0DB] transition">
+    <div className="bg-[#111] border border-white/10 rounded-xl p-8 hover:border-[#eaeaea] transition">
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-white/70 text-sm leading-relaxed">{desc}</p>
     </div>

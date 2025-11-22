@@ -29,7 +29,7 @@ export default function ContactPage() {
         {/* LEFT — CONTACT FORM */}
         <form
           onSubmit={handleSubmit}
-          className="bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl p-10 shadow-xl transition hover:border-[#FAF0DB]/50 animate-slideUp"
+          className="bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl p-10 shadow-xl transition hover:border-[#eaeaea]/50 animate-slideUp"
         >
           <h2 className="text-2xl font-semibold text-white mb-6">Send Us a Message</h2>
 
@@ -40,7 +40,7 @@ export default function ContactPage() {
               <input
                 type="text"
                 required
-                className="w-full bg-black/40 border border-white/20 px-4 py-3 rounded-lg text-white focus:border-[#FAF0DB] transition"
+                className="w-full bg-black/40 border border-white/20 px-4 py-3 rounded-lg text-white focus:border-[#eaeaea] transition"
                 placeholder="Enter your name"
               />
             </div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
               <input
                 type="email"
                 required
-                className="w-full bg-black/40 border border-white/20 px-4 py-3 rounded-lg text-white focus:border-[#FAF0DB] transition"
+                className="w-full bg-black/40 border border-white/20 px-4 py-3 rounded-lg text-white focus:border-[#eaeaea] transition"
                 placeholder="example@gmail.com"
               />
             </div>
@@ -60,14 +60,14 @@ export default function ContactPage() {
               <textarea
                 rows="5"
                 required
-                className="w-full bg-black/40 border border-white/20 px-4 py-3 rounded-lg text-white focus:border-[#FAF0DB] transition"
+                className="w-full bg-black/40 border border-white/20 px-4 py-3 rounded-lg text-white focus:border-[#eaeaea] transition"
                 placeholder="Write your message..."
               ></textarea>
             </div>
           </div>
 
           {/* BUTTON */}
-          <button className="mt-6 w-full bg-[#FAF0DB] text-black font-semibold py-3 rounded-lg hover:bg-white transition">
+          <button className="mt-6 w-full bg-[#eaeaea] text-black font-semibold py-3 rounded-lg hover:bg-white transition">
             Send Message
           </button>
 
@@ -94,14 +94,14 @@ export default function ContactPage() {
 
             <div>
               <p className="text-white/50 text-sm">Instagram</p>
-              <a href="#" className="text-lg font-medium hover:text-[#FAF0DB]">
+              <a href="#" className="text-lg font-medium hover:text-[#eaeaea]">
                 @looksbeard.productions
               </a>
             </div>
 
             <div>
               <p className="text-white/50 text-sm">WhatsApp</p>
-              <a href="#" className="text-lg font-medium hover:text-[#FAF0DB]">
+              <a href="#" className="text-lg font-medium hover:text-[#eaeaea]">
                 +91 00000 00000
               </a>
             </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
           <div className="mt-10">
             <a
               href="#"
-              className="inline-block border border-[#FAF0DB] text-[#FAF0DB] px-6 py-3 rounded-lg hover:bg-[#FAF0DB] hover:text-black transition"
+              className="inline-block border border-[#eaeaea] text-[#eaeaea] px-6 py-3 rounded-lg hover:bg-[#eaeaea] hover:text-black transition"
             >
               View Our Work →
             </a>
