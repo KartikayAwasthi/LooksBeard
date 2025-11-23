@@ -37,25 +37,32 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-14">
 
-        {/* LOGO + DESCRIPTION */}
-        <div>
-          <Link href="/">
-            <div className="flex items-center gap-3 mb-5 cursor-pointer transition-transform hover:scale-105">
-              <Image
-                src="/logo/logo1.png"
-                width={140}
-                height={140}
-                alt="Looksbeard Logo"
-                className="object-contain drop-shadow-lg"
-              />
-            </div>
-          </Link>
+       {/* LOGO + DESCRIPTION */}
+<div>
+  <Link href="/">
+    <div className="flex items-center gap-3 mb-5 cursor-pointer group">
+      <Image
+        src="/logo/logo1.png"
+        width={140}
+        height={140}
+        alt="Looksbeard Logo"
+        className="
+          object-contain 
+          drop-shadow-lg
+          transition-transform 
+          duration-300 
+          ease-out
+          group-hover:scale-110
+        "
+      />
+    </div>
+  </Link>
 
-          <p className="text-sm text-black/70 leading-relaxed">
-            We create cinematic visuals, motion graphics, and world-class
-            post-production that elevate your brand's story.
-          </p>
-        </div>
+  <p className="text-sm text-black/70 leading-relaxed">
+   Turning Imagination Into Motion
+  </p>
+</div>
+
 
         {/* QUICK LINKS */}
         <div>

@@ -8,42 +8,71 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function WorkPage() {
   const projects = [
-    { title: "1905 Render Cinematic", tag: "3D Render", emoji: "🎬", video: "/video/1905_rendercomp.mp4" },
-    { title: "Acharya Promo Edit", tag: "Commercial Edit", emoji: "🎞️", video: "/video/Acharaya.mp4" },
-    { title: "ArtAttack Test Shot", tag: "Test Edit", emoji: "🧪", video: "/video/ArtAttack_Test.mp4" },
-    { title: "Art Hand Edit", tag: "Commercial Edit", emoji: "🎨", video: "/video/arthand.mp4" },
-    { title: "Bagel Product Edit", tag: "Food Commercial", emoji: "🥯", video: "/video/Bagel.mp4" },
-    { title: "Bagels Food Edit", tag: "Food Edit", emoji: "🍽️", video: "/video/Bagels.mp4" },
-    { title: "Balloon Render VFX", tag: "3D VFX", emoji: "🎈", video: "/video/balloon-rendered5_FullHD.mp4" },
-    { title: "Building Promo Edit", tag: "Commercial Edit", emoji: "🏢", video: "/video/buyildingcomp.mp4" },
-    { title: "Car Scene Cinematic", tag: "Automobile Edit", emoji: "🚗", video: "/video/Car_Scene.mp4" },
-    { title: "Chocolate Ad Edit", tag: "Food Branding", emoji: "🍫", video: "/video/choc.mp4" },
-    { title: "CM Final Edit", tag: "Professional Edit", emoji: "🎞️", video: "/video/CM_Finalcomp.mp4" },
-    { title: "Coffee Machine Ad", tag: "Product Ad", emoji: "☕", video: "/video/coffeemachine.mp4" },
-    { title: "Composition Edit 1", tag: "Composition Edit", emoji: "🎛️", video: "/video/Comp_1.mp4" },
-    { title: "Composition Edit 2", tag: "Edit Breakdown", emoji: "🧩", video: "/video/Comp.mp4" },
-    { title: "Deco Product Edit", tag: "Commercial Edit", emoji: "🎨", video: "/video/Deco.mp4" },
-    { title: "Decoy Product Edit", tag: "Commercial Edit", emoji: "🎨", video: "/video/Decoy.mp4" },
-    { title: "Dew Feedback Edit", tag: "Commercial Edit", emoji: "💧", video: "/video/Dew_compfeedbackcomp.mp4" },
-    { title: "Drift Car Edit", tag: "Automobile Edit", emoji: "🏎️", video: "/video/DriftComp.mp4" },
-    { title: "Flash Logo Animation", tag: "Motion Graphics", emoji: "⚡", video: "/video/flash_logocomp.mp4" },
-    { title: "Flower Cinematic Edit", tag: "Aesthetic Edit", emoji: "🌸", video: "/video/flower.mp4" },
-    { title: "Glow Edit", tag: "Creative Edit", emoji: "✨", video: "/video/Glow.mp4" },
-    { title: "Glowtime Energy Edit", tag: "High Energy Edit", emoji: "⚡", video: "/video/Glowtime.mp4" },
-    { title: "Gravity Motion Edit", tag: "Dynamic Motion", emoji: "🌀", video: "/video/GRAVITY.mp4" },
-    { title: "Honey Product Ad", tag: "Food Ad", emoji: "🍯", video: "/video/honey.mp4" },
-    { title: "JioMart Creative Edit", tag: "Branding Edit", emoji: "🛒", video: "/video/JioMart.mp4" },
-    { title: "Maquiplus Landscape Ad", tag: "Commercial Edit", emoji: "🌄", video: "/video/maquiplus_landscapecomp.mp4" },
-    { title: "Miami Travel Edit", tag: "Travel Video", emoji: "🌴", video: "/video/miami.mp4" },
-    { title: "Monaco Travel Edit", tag: "Travel Video", emoji: "🌊", video: "/video/monaco.mp4" },
-    { title: "Rocks Nature Edit", tag: "Nature Video", emoji: "🪨", video: "/video/rocks.mp4" },
-    { title: "Samosa Food Ad", tag: "Food Advertising", emoji: "🥟", video: "/video/samosa.mp4" },
-    { title: "Solid Render 3D", tag: "3D Rendering", emoji: "📦", video: "/video/solidrendercomp.mp4" },
-    { title: "The Booyah Gaming Edit", tag: "Gaming Edit", emoji: "🔥", video: "/video/TheBooyah.mp4" },
-    { title: "Tokyo Street Edit", tag: "Travel Edit", emoji: "🗼", video: "/video/tokyo.mp4" },
-    { title: "Veet Ad Film Edit", tag: "Commercial Video", emoji: "📽️", video: "/video/Veet.mp4" },
-    { title: "Vidya Educational Edit", tag: "Educational Video", emoji: "📘", video: "/video/Vidya.mp4" }
-  ];
+  { title: "1905 Render Comp", tag: "Video", emoji: "🎬", video: "/video/1905_rendercomp.mp4" },
+  { title: "Acharya", tag: "Video", emoji: "🎬", video: "/video/Acharyamp4" },
+  { title: "ArtAttack Test", tag: "Video", emoji: "🎬", video: "/video/ArtAttack_Test.mp4" },
+  { title: "Anthnd", tag: "Video", emoji: "🎬", video: "/video/anthnd.mp4" },
+  { title: "Bagel", tag: "Video", emoji: "🎬", video: "/video/Bagel.mp4" },
+  { title: "Bagels", tag: "Video", emoji: "🎬", video: "/video/Bagels.mp4" },
+  { title: "Bagels Preparation", tag: "Video", emoji: "🎬", video: "/video/Bagelspreparatio.mp4" },
+  { title: "Balloon Rendered 5 FullHD", tag: "Video", emoji: "🎬", video: "/video/balloon-rendered5_FullHD.mp4" },
+  { title: "Building Comp", tag: "Video", emoji: "🎬", video: "/video/buildingcomp.mp4" },
+  { title: "Car Scene 4", tag: "Video", emoji: "🎬", video: "/video/Car_Scene_4.mp4" },
+  { title: "Choco", tag: "Video", emoji: "🎬", video: "/video/choc.mp4" },
+  { title: "CM Final Comp", tag: "Video", emoji: "🎬", video: "/video/CM_Finalcomp.mp4" },
+  { title: "Coffee Machine", tag: "Video", emoji: "🎬", video: "/video/coffeemachine.mp4" },
+  { title: "Comp 1", tag: "Video", emoji: "🎬", video: "/video/Comp_1.mp4" },
+  { title: "Comp", tag: "Video", emoji: "🎬", video: "/video/Comp.mp4" },
+  { title: "Deco", tag: "Video", emoji: "🎬", video: "/video/Deco.mp4" },
+  { title: "Dew Comp Feedback Comp", tag: "Video", emoji: "🎬", video: "/video/Dew_compfeedbackcomp.mp4" },
+  { title: "Drift Comp", tag: "Video", emoji: "🎬", video: "/video/DriftComp.mp4" },
+  { title: "Fish Logo Comp", tag: "Video", emoji: "🎬", video: "/video/fish_logocomp.mp4" },
+  { title: "Flower", tag: "Video", emoji: "🎬", video: "/video/flower.mp4" },
+  { title: "Glow", tag: "Video", emoji: "🎬", video: "/video/Glow.mp4" },
+  { title: "Glowlime", tag: "Video", emoji: "🎬", video: "/video/Glowlime.mp4" },
+  { title: "Gravity", tag: "Video", emoji: "🎬", video: "/video/GRAVITY.mp4" },
+  { title: "Honey", tag: "Video", emoji: "🎬", video: "/video/honey.mp4" },
+
+  { title: "JioMart Delivers 1", tag: "Video", emoji: "🎬", video: "/video/JioMart_Delivers.mp4" },
+  { title: "JioMart Delivers 2", tag: "Video", emoji: "🎬", video: "/video/JioMart-Delivers.mp4" },
+  { title: "JioMart", tag: "Video", emoji: "🎬", video: "/video/JioMart.mp4" },
+  { title: "JioMart Deliveries", tag: "Video", emoji: "🎬", video: "/video/JioMartDelivers.mp4" },
+  { title: "Jio Martgives", tag: "Video", emoji: "🎬", video: "/video/JioMartgives.mp4" },
+
+  { title: "Logo Animation", tag: "Video", emoji: "🎬", video: "/video/logo-animation.MP4" },
+  { title: "Maquipulus Landscape Comp", tag: "Video", emoji: "🎬", video: "/video/maquipulus_landscapecomp.mp4" },
+
+  { title: "Miami", tag: "Video", emoji: "🎬", video: "/video/miami.mp4" },
+
+  { title: "Moena Occasion", tag: "Video", emoji: "🎬", video: "/video/MoenaOccasion.mp4" },
+  { title: "Moena Your", tag: "Video", emoji: "🎬", video: "/video/MoenaYour.mp4" },
+  { title: "Monaco", tag: "Video", emoji: "🎬", video: "/video/monaco.mp4" },
+
+  { title: "Nep 1", tag: "Video", emoji: "🎬", video: "/video/nep1.mp4" },
+  { title: "Nep 2", tag: "Video", emoji: "🎬", video: "/video/nep2.mp4" },
+  { title: "Nep 3", tag: "Video", emoji: "🎬", video: "/video/nep3.mp4" },
+  { title: "Nep 4", tag: "Video", emoji: "🎬", video: "/video/nep4.mp4" },
+  { title: "Nep 5", tag: "Video", emoji: "🎬", video: "/video/nep5.mp4" },
+
+  { title: "Nipun", tag: "Video", emoji: "🎬", video: "/video/Nipunmp4" },
+  { title: "Novo JoMart", tag: "Video", emoji: "🎬", video: "/video/NovoJiomart.mp4" },
+
+  { title: "Prodigy", tag: "Video", emoji: "🎬", video: "/video/Prodigy.mp4" },
+  { title: "Prodigy Bedroom", tag: "Video", emoji: "🎬", video: "/video/ProdigyBedroom.mp4" },
+
+  { title: "Rocks", tag: "Video", emoji: "🎬", video: "/video/rocks.mp4" },
+  { title: "Samosa", tag: "Video", emoji: "🎬", video: "/video/samosa.mp4" },
+
+  { title: "Sky", tag: "Video", emoji: "🎬", video: "/video/Sky.mp4" },
+
+  { title: "Solid Render Comp", tag: "Video", emoji: "🎬", video: "/video/solidrendercomp.mp4" },
+  { title: "TheBooyah", tag: "Video", emoji: "🎬", video: "/video/TheBooyah.mp4" },
+  { title: "Tokyo", tag: "Video", emoji: "🎬", video: "/video/tokyo.mp4" },
+
+  { title: "TQH Media", tag: "Video", emoji: "🎬", video: "/video/TQHMedia.mp4" },
+  { title: "Veet", tag: "Video", emoji: "🎬", video: "/video/Veet.mp4" },
+  { title: "Vidya", tag: "Video", emoji: "🎬", video: "/video/Vidya.mp4" },
+];
 
   const containerRef = useRef(null);
   const gridItemsRef = useRef([]); // DOM refs for cards

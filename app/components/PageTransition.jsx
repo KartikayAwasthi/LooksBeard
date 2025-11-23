@@ -13,7 +13,7 @@ export default function PageTransition() {
 
     const timer = setTimeout(() => {
       setIsAnimating(false);
-    }, 1300); // must match animation duration
+    }, 1300); // matches animation duration
 
     return () => clearTimeout(timer);
   }, [pathname]);
@@ -21,13 +21,24 @@ export default function PageTransition() {
   return (
     <>
       {isAnimating && (
-        <div className="page-transition flex items-center justify-center">
+        <div className="page-transition flex flex-col items-center justify-center gap-4">
+          {/* Main Logo */}
           <Image
             src="/logo/logo1.png"
             alt="Looksbeard Logo"
             width={200}
             height={200}
             className="transition-zoom-logo"
+          />
+
+          {/* GIF / Video Animation below logo */}
+          <Image
+            src="/logo/logo-video.gif"
+            alt="Logo Animation"
+            width={500}
+            height={500}
+            className="transition-video"
+            unoptimized
           />
         </div>
       )}
