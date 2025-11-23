@@ -22,18 +22,18 @@ export default function PageTransition() {
     <>
       {isAnimating && (
         <div className="page-transition flex flex-col items-center justify-center gap-4">
-          {/* Main Logo */}
-          <Image
+          
+          {/* <Image
             src="/logo/logo1.png"
             alt="Looksbeard Logo"
             width={200}
             height={200}
             className="transition-zoom-logo"
-          />
+          /> */}
 
           {/* GIF / Video Animation below logo */}
           <Image
-            src="/logo/logo-video.gif"
+            src="/logo/video.gif"
             alt="Logo Animation"
             width={500}
             height={500}
