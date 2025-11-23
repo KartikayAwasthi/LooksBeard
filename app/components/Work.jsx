@@ -9,9 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 export default function WorkPage() {
   const projects = [
   { title: "1905 Render Comp", tag: "Video", emoji: "🎬", video: "/video/1905_rendercomp.mp4" },
-  { title: "Acharya", tag: "Video", emoji: "🎬", video: "/video/Acharyamp4" },
+  { title: "Acharya", tag: "Video", emoji: "🎬", video: "/video/Acharaya.mp4" },
   { title: "ArtAttack Test", tag: "Video", emoji: "🎬", video: "/video/ArtAttack_Test.mp4" },
-  { title: "Anthnd", tag: "Video", emoji: "🎬", video: "/video/anthnd.mp4" },
+  { title: "Anthnd", tag: "Video", emoji: "🎬", video: "/video/arthand.mp4" },
   { title: "Bagel", tag: "Video", emoji: "🎬", video: "/video/Bagel.mp4" },
   { title: "Bagels", tag: "Video", emoji: "🎬", video: "/video/Bagels.mp4" },
   { title: "Bagels Preparation", tag: "Video", emoji: "🎬", video: "/video/Bagelspreparatio.mp4" },

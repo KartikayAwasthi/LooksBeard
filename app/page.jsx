@@ -5,13 +5,12 @@ import Work from "./components/Work";
 import ContactFrom from "./components/ContactForm";
 import About from "./components/About";
 
-
 export default function Home() {
   return (
     <main className="mt-24">
       
       {/* HERO SECTION */}
-      <section className="min-h-[80vh] flex items-center justify-center px-6 text-center fade-in">
+      <section id="home" className="min-h-[80vh] flex items-center justify-center px-6 text-center fade-in">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold glow-text leading-tight">
             Turning Imagination Into Motion
@@ -22,7 +21,7 @@ export default function Home() {
             high-end post-production that elevates your visual storytelling.
           </p>
 
-          <Link href="/contact">
+          <Link href="#contact">
             <button className="mt-8 bg-[#eaeaea] text-black px-8 py-3 rounded-lg font-semibold hover:bg-white transition">
               Start Your Project
             </button>
@@ -30,28 +29,23 @@ export default function Home() {
         </div>
       </section>
 
-      
+    <section id="services" className="scroll-section">
+  <Services />
+</section>
 
-      <Services/>
+<section id="work" className="scroll-section">
+  <Work />
+</section>
 
-      <Work/>
+<section id="about" className="scroll-section">
+  <About />
+</section>
 
-      <About />
+<section id="contact" className="scroll-section">
+  <ContactFrom />
+</section>
 
-
-      <ContactFrom/>
-
-      
 
     </main>
-  );
-}
-
-function ServiceCard({ title, desc }) {
-  return (
-    <div className="bg-[#111] border border-white/10 rounded-xl p-8 hover:border-[#eaeaea] transition">
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-white/70 text-sm leading-relaxed">{desc}</p>
-    </div>
   );
 }

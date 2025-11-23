@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
+  // Scroll detection
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -15,87 +16,65 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Smooth scroll function
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    setOpen(false); // close mobile menu
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <nav
-      className={`
-        fixed top-0 left-0 w-full z-50 transition-all duration-300
-        ${isScrolled ? "shadow-lg" : ""}
-        bg-[#eaeaea]
-      `}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
+      ${isScrolled ? "shadow-lg bg-[#eaeaea]" : "bg-[#eaeaea]"}`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
+
         {/* Logo */}
-        <Link href="/">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <Image
-  src="/logo/logo1.png"
-  width={80}
-  height={80}
-  alt="Looksbeard Logo"
-  className="
-    object-contain
-    transition-all duration-300 ease-out
-    hover:scale-125 hover:rotate-0
-    hover:brightness-110
-  "
-  style={{
-    transformOrigin: "center",
-  }}
-/>
+        <button onClick={() => scrollToSection("home")}>
+          <Image
+            src="/logo/logo1.png"
+            width={80}
+            height={80}
+            alt="Looksbeard Logo"
+            className="object-contain transition-all duration-300 hover:scale-125"
+          />
+        </button>
 
-          </div>
-        </Link>
-
-        {/* Desktop Links */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex gap-10 text-black font-bold">
-          {["Home", "About", "Services", "Work", "Contact"].map((item) => (
-            <Link
-              key={item}
-              href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
-              className="relative group text-[16px]"
-            >
-              {item}
-
-              {/* underline hover animation */}
-              <span className="
-                absolute left-0 -bottom-1 h-[2px] w-0 bg-black
-                group-hover:w-full transition-all duration-300
-              "></span>
-            </Link>
-          ))}
+          <button onClick={() => scrollToSection("home")} className="nav-btn">Home</button>
+          <button onClick={() => scrollToSection("about")} className="nav-btn">About</button>
+          <button onClick={() => scrollToSection("services")} className="nav-btn">Services</button>
+          <button onClick={() => scrollToSection("work")} className="nav-btn">Work</button>
+          <button onClick={() => scrollToSection("contact")} className="nav-btn">Contact</button>
         </div>
 
-        {/* Mobile */}
-        <div className="md:hidden">
-          <MobileMenu />
-        </div>
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-black text-3xl"
+        >
+          ☰
+        </button>
       </div>
-    </nav>
-  );
-}
 
-function MobileMenu() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <>
-      <button
-        onClick={() => setOpen(!open)}
-        className="text-black focus:outline-none text-3xl"
-      >
-        ☰
-      </button>
-
+      {/* Mobile Menu */}
       {open && (
-        <div className="absolute top-full left-0 w-full bg-[#eaeaea] flex flex-col text-black py-6 px-6 space-y-5 text-lg shadow-md font-bold">
-          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setOpen(false)}>About</Link>
-          <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
-          <Link href="/work" onClick={() => setOpen(false)}>Work</Link>
-          <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+        <div className="md:hidden bg-[#eaeaea] text-black py-6 px-6 space-y-5 text-lg font-bold shadow-md">
+          <button onClick={() => scrollToSection("home")} className="mobile-btn">Home</button>
+          <button onClick={() => scrollToSection("about")} className="mobile-btn">About</button>
+          <button onClick={() => scrollToSection("services")} className="mobile-btn">Services</button>
+          <button onClick={() => scrollToSection("work")} className="mobile-btn">Work</button>
+          <button onClick={() => scrollToSection("contact")} className="mobile-btn">Contact</button>
         </div>
       )}
-    </>
+    </nav>
   );
 }
