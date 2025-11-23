@@ -1,10 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const funny = localFont({
+  src: "../fonts/FunnyCute.ttf",
+  variable: "--font-funny",
+});
 
 export default function Hero() {
   return (
-    <section className="min-h-[80vh] flex items-center justify-center px-6 text-center fade-in">
+    <section className={`${funny.variable} min-h-[80vh] flex items-center justify-center px-6 text-center fade-in`}>
       <div className="max-w-3xl">
-        <h1 className="text-4xl md:text-6xl font-bold glow-text leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold glow-text leading-tight font-funny">
           Turning Imagination Into Motion
         </h1>
 

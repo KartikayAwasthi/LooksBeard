@@ -1,78 +1,85 @@
-// WorkPage.jsx
 "use client";
 
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Film,
+  Clapperboard,
+  Sparkles,
+  Flame,
+  Video as VideoIcon,
+  Play,
+} from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WorkPage() {
   const projects = [
-  { title: "1905 Render Comp", tag: "Video", emoji: "🎬", video: "/video/1905_rendercomp.mp4" },
-  { title: "Acharya", tag: "Video", emoji: "🎬", video: "/video/Acharaya.mp4" },
-  { title: "ArtAttack Test", tag: "Video", emoji: "🎬", video: "/video/ArtAttack_Test.mp4" },
-  { title: "Anthnd", tag: "Video", emoji: "🎬", video: "/video/arthand.mp4" },
-  { title: "Bagel", tag: "Video", emoji: "🎬", video: "/video/Bagel.mp4" },
-  { title: "Bagels", tag: "Video", emoji: "🎬", video: "/video/Bagels.mp4" },
-  { title: "Bagels Preparation", tag: "Video", emoji: "🎬", video: "/video/Bagelspreparatio.mp4" },
-  { title: "Balloon Rendered 5 FullHD", tag: "Video", emoji: "🎬", video: "/video/balloon-rendered5_FullHD.mp4" },
-  { title: "Building Comp", tag: "Video", emoji: "🎬", video: "/video/buildingcomp.mp4" },
-  { title: "Car Scene 4", tag: "Video", emoji: "🎬", video: "/video/Car_Scene_4.mp4" },
-  { title: "Choco", tag: "Video", emoji: "🎬", video: "/video/choc.mp4" },
-  { title: "CM Final Comp", tag: "Video", emoji: "🎬", video: "/video/CM_Finalcomp.mp4" },
-  { title: "Coffee Machine", tag: "Video", emoji: "🎬", video: "/video/coffeemachine.mp4" },
-  { title: "Comp 1", tag: "Video", emoji: "🎬", video: "/video/Comp_1.mp4" },
-  { title: "Comp", tag: "Video", emoji: "🎬", video: "/video/Comp.mp4" },
-  { title: "Deco", tag: "Video", emoji: "🎬", video: "/video/Deco.mp4" },
-  { title: "Dew Comp Feedback Comp", tag: "Video", emoji: "🎬", video: "/video/Dew_compfeedbackcomp.mp4" },
-  { title: "Drift Comp", tag: "Video", emoji: "🎬", video: "/video/DriftComp.mp4" },
-  { title: "Fish Logo Comp", tag: "Video", emoji: "🎬", video: "/video/fish_logocomp.mp4" },
-  { title: "Flower", tag: "Video", emoji: "🎬", video: "/video/flower.mp4" },
-  { title: "Glow", tag: "Video", emoji: "🎬", video: "/video/Glow.mp4" },
-  { title: "Glowlime", tag: "Video", emoji: "🎬", video: "/video/Glowlime.mp4" },
-  { title: "Gravity", tag: "Video", emoji: "🎬", video: "/video/GRAVITY.mp4" },
-  { title: "Honey", tag: "Video", emoji: "🎬", video: "/video/honey.mp4" },
+    { title: "1905 Render Comp", tag: "Video", emoji: "🎬", video: "/video/1905_rendercomp.mp4" },
+    { title: "Acharya", tag: "Video", emoji: "🎬", video: "/video/Acharaya.mp4" },
+    { title: "ArtAttack Test", tag: "Video", emoji: "🎬", video: "/video/ArtAttack_Test.mp4" },
+    { title: "Anthnd", tag: "Video", emoji: "🎬", video: "/video/arthand.mp4" },
+    { title: "Bagel", tag: "Video", emoji: "🎬", video: "/video/Bagel.mp4" },
+    { title: "Bagels", tag: "Video", emoji: "🎬", video: "/video/Bagels.mp4" },
+    { title: "Bagels Preparation", tag: "Video", emoji: "🎬", video: "/video/Bagelspreparatio.mp4" },
+    { title: "Balloon Rendered 5 FullHD", tag: "Video", emoji: "🎬", video: "/video/balloon-rendered5_FullHD.mp4" },
+    { title: "Building Comp", tag: "Video", emoji: "🎬", video: "/video/buildingcomp.mp4" },
+    { title: "Car Scene 4", tag: "Video", emoji: "🎬", video: "/video/Car_Scene_4.mp4" },
+    { title: "Choco", tag: "Video", emoji: "🎬", video: "/video/choc.mp4" },
+    { title: "CM Final Comp", tag: "Video", emoji: "🎬", video: "/video/CM_Finalcomp.mp4" },
+    { title: "Coffee Machine", tag: "Video", emoji: "🎬", video: "/video/coffeemachine.mp4" },
+    { title: "Comp 1", tag: "Video", emoji: "🎬", video: "/video/Comp_1.mp4" },
+    { title: "Comp", tag: "Video", emoji: "🎬", video: "/video/Comp.mp4" },
+    { title: "Deco", tag: "Video", emoji: "🎬", video: "/video/Deco.mp4" },
+    { title: "Dew Comp Feedback Comp", tag: "Video", emoji: "🎬", video: "/video/Dew_compfeedbackcomp.mp4" },
+    { title: "Drift Comp", tag: "Video", emoji: "🎬", video: "/video/DriftComp.mp4" },
+    { title: "Fish Logo Comp", tag: "Video", emoji: "🎬", video: "/video/fish_logocomp.mp4" },
+    { title: "Flower", tag: "Video", emoji: "🎬", video: "/video/flower.mp4" },
+    { title: "Glow", tag: "Video", emoji: "🎬", video: "/video/Glow.mp4" },
+    { title: "Glowlime", tag: "Video", emoji: "🎬", video: "/video/Glowlime.mp4" },
+    { title: "Gravity", tag: "Video", emoji: "🎬", video: "/video/GRAVITY.mp4" },
+    { title: "Honey", tag: "Video", emoji: "🎬", video: "/video/honey.mp4" },
 
-  { title: "JioMart Delivers 1", tag: "Video", emoji: "🎬", video: "/video/JioMart_Delivers.mp4" },
-  { title: "JioMart Delivers 2", tag: "Video", emoji: "🎬", video: "/video/JioMart-Delivers.mp4" },
-  { title: "JioMart", tag: "Video", emoji: "🎬", video: "/video/JioMart.mp4" },
-  { title: "JioMart Deliveries", tag: "Video", emoji: "🎬", video: "/video/JioMartDelivers.mp4" },
-  { title: "Jio Martgives", tag: "Video", emoji: "🎬", video: "/video/JioMartgives.mp4" },
+    { title: "JioMart Delivers 1", tag: "Video", emoji: "🎬", video: "/video/JioMart_Delivers.mp4" },
+    { title: "JioMart Delivers 2", tag: "Video", emoji: "🎬", video: "/video/JioMart-Delivers.mp4" },
+    { title: "JioMart", tag: "Video", emoji: "🎬", video: "/video/JioMart.mp4" },
+    { title: "JioMart Deliveries", tag: "Video", emoji: "🎬", video: "/video/JioMartDelivers.mp4" },
+    { title: "Jio Martgives", tag: "Video", emoji: "🎬", video: "/video/JioMartgives.mp4" },
 
-  { title: "Logo Animation", tag: "Video", emoji: "🎬", video: "/video/logo-animation.MP4" },
-  { title: "Maquipulus Landscape Comp", tag: "Video", emoji: "🎬", video: "/video/maquipulus_landscapecomp.mp4" },
+    { title: "Logo Animation", tag: "Video", emoji: "🎬", video: "/video/logo-animation.MP4" },
+    { title: "Maquipulus Landscape Comp", tag: "Video", emoji: "🎬", video: "/video/maquipulus_landscapecomp.mp4" },
 
-  { title: "Miami", tag: "Video", emoji: "🎬", video: "/video/miami.mp4" },
+    { title: "Miami", tag: "Video", emoji: "🎬", video: "/video/miami.mp4" },
 
-  { title: "Moena Occasion", tag: "Video", emoji: "🎬", video: "/video/MoenaOccasion.mp4" },
-  { title: "Moena Your", tag: "Video", emoji: "🎬", video: "/video/MoenaYour.mp4" },
-  { title: "Monaco", tag: "Video", emoji: "🎬", video: "/video/monaco.mp4" },
+    { title: "Moena Occasion", tag: "Video", emoji: "🎬", video: "/video/MoenaOccasion.mp4" },
+    { title: "Moena Your", tag: "Video", emoji: "🎬", video: "/video/MoenaYour.mp4" },
+    { title: "Monaco", tag: "Video", emoji: "🎬", video: "/video/monaco.mp4" },
 
-  { title: "Nep 1", tag: "Video", emoji: "🎬", video: "/video/nep1.mp4" },
-  { title: "Nep 2", tag: "Video", emoji: "🎬", video: "/video/nep2.mp4" },
-  { title: "Nep 3", tag: "Video", emoji: "🎬", video: "/video/nep3.mp4" },
-  { title: "Nep 4", tag: "Video", emoji: "🎬", video: "/video/nep4.mp4" },
-  { title: "Nep 5", tag: "Video", emoji: "🎬", video: "/video/nep5.mp4" },
+    { title: "Nep 1", tag: "Video", emoji: "🎬", video: "/video/nep1.mp4" },
+    { title: "Nep 2", tag: "Video", emoji: "🎬", video: "/video/nep2.mp4" },
+    { title: "Nep 3", tag: "Video", emoji: "🎬", video: "/video/nep3.mp4" },
+    { title: "Nep 4", tag: "Video", emoji: "🎬", video: "/video/nep4.mp4" },
+    { title: "Nep 5", tag: "Video", emoji: "🎬", video: "/video/nep5.mp4" },
 
-  { title: "Nipun", tag: "Video", emoji: "🎬", video: "/video/Nipunmp4" },
-  { title: "Novo JoMart", tag: "Video", emoji: "🎬", video: "/video/NovoJiomart.mp4" },
+    { title: "Nipun", tag: "Video", emoji: "🎬", video: "/video/Nipunmp4" },
+    { title: "Novo JoMart", tag: "Video", emoji: "🎬", video: "/video/NovoJiomart.mp4" },
 
-  { title: "Prodigy", tag: "Video", emoji: "🎬", video: "/video/Prodigy.mp4" },
-  { title: "Prodigy Bedroom", tag: "Video", emoji: "🎬", video: "/video/ProdigyBedroom.mp4" },
+    { title: "Prodigy", tag: "Video", emoji: "🎬", video: "/video/Prodigy.mp4" },
+    { title: "Prodigy Bedroom", tag: "Video", emoji: "🎬", video: "/video/ProdigyBedroom.mp4" },
 
-  { title: "Rocks", tag: "Video", emoji: "🎬", video: "/video/rocks.mp4" },
-  { title: "Samosa", tag: "Video", emoji: "🎬", video: "/video/samosa.mp4" },
+    { title: "Rocks", tag: "Video", emoji: "🎬", video: "/video/rocks.mp4" },
+    { title: "Samosa", tag: "Video", emoji: "🎬", video: "/video/samosa.mp4" },
 
-  { title: "Sky", tag: "Video", emoji: "🎬", video: "/video/Sky.mp4" },
+    { title: "Sky", tag: "Video", emoji: "🎬", video: "/video/Sky.mp4" },
 
-  { title: "Solid Render Comp", tag: "Video", emoji: "🎬", video: "/video/solidrendercomp.mp4" },
-  { title: "TheBooyah", tag: "Video", emoji: "🎬", video: "/video/TheBooyah.mp4" },
-  { title: "Tokyo", tag: "Video", emoji: "🎬", video: "/video/tokyo.mp4" },
+    { title: "Solid Render Comp", tag: "Video", emoji: "🎬", video: "/video/solidrendercomp.mp4" },
+    { title: "TheBooyah", tag: "Video", emoji: "🎬", video: "/video/TheBooyah.mp4" },
+    { title: "Tokyo", tag: "Video", emoji: "🎬", video: "/video/tokyo.mp4" },
 
-  { title: "TQH Media", tag: "Video", emoji: "🎬", video: "/video/TQHMedia.mp4" },
-  { title: "Veet", tag: "Video", emoji: "🎬", video: "/video/Veet.mp4" },
-  { title: "Vidya", tag: "Video", emoji: "🎬", video: "/video/Vidya.mp4" },
-];
+    { title: "TQH Media", tag: "Video", emoji: "🎬", video: "/video/TQHMedia.mp4" },
+    { title: "Veet", tag: "Video", emoji: "🎬", video: "/video/Veet.mp4" },
+    { title: "Vidya", tag: "Video", emoji: "🎬", video: "/video/Vidya.mp4" },
+  ];
 
   const containerRef = useRef(null);
   const gridItemsRef = useRef([]); // DOM refs for cards
@@ -111,8 +118,8 @@ export default function WorkPage() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 85%"
-          }
+            start: "top 85%",
+          },
         }
       );
     }, containerRef);
@@ -179,7 +186,7 @@ export default function WorkPage() {
           y: 0,
           stagger: { each: 0.06 },
           duration: 0.36,
-          ease: "power4.out"
+          ease: "power4.out",
         }
       );
       // also lazy-load any that are already in viewport by triggering the lazy loader effect via state change (expanded)
@@ -192,7 +199,10 @@ export default function WorkPage() {
       <section className="text-center mb-14 px-6">
         <h1 className="work-hero text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
           <span className="inline-block mr-3">Our Work</span>
-          <span className="inline-block glow-text">🎬</span>
+          <span className="inline-block glow-text">
+            {/* replaced emoji with film icon */}
+            <Film className="inline-block w-10 h-10 align-middle text-[#eaeaea]" />
+          </span>
           <span className="ml-3 text-[#eaeaea] text-lg font-medium">Viral Reels Grid</span>
         </h1>
 
@@ -201,10 +211,18 @@ export default function WorkPage() {
         </p>
 
         <div className="flex justify-center gap-4 mt-6">
-          <span className="emoji-badge px-3 py-1 rounded-full bg-white/5 text-2xl">🎞️</span>
-          <span className="emoji-badge px-3 py-1 rounded-full bg-white/5 text-2xl">✨</span>
-          <span className="emoji-badge px-3 py-1 rounded-full bg-white/5 text-2xl">🔥</span>
-          <span className="emoji-badge px-3 py-1 rounded-full bg-white/5 text-2xl">📽️</span>
+          <div className="emoji-badge p-2 rounded-full bg-white/5">
+            <Clapperboard className="w-5 h-5 text-[#eaeaea]" />
+          </div>
+          <div className="emoji-badge p-2 rounded-full bg-white/5">
+            <Sparkles className="w-5 h-5 text-[#eaeaea]" />
+          </div>
+          <div className="emoji-badge p-2 rounded-full bg-white/5">
+            <Flame className="w-5 h-5 text-[#eaeaea]" />
+          </div>
+          <div className="emoji-badge p-2 rounded-full bg-white/5">
+            <VideoIcon className="w-5 h-5 text-[#eaeaea]" />
+          </div>
         </div>
 
         {!userInteracted && (
@@ -233,9 +251,10 @@ export default function WorkPage() {
               />
               <div className="p-4 md:p-5">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm uppercase tracking-wider text-[#eaeaea]">
-                    {item.tag} <span className="ml-2">{item.emoji}</span>
-                  </span>
+                  <div className="flex items-center gap-2 text-[#eaeaea]">
+                    <Film className="w-4 h-4 text-[#eaeaea]" />
+                    <span className="text-sm uppercase tracking-wider">{item.tag}</span>
+                  </div>
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mt-3 text-white">{item.title}</h3>
               </div>
@@ -266,7 +285,7 @@ export default function WorkPage() {
           href="/contact"
           className="inline-block px-10 py-3 rounded-full bg-[#eaeaea] text-black font-semibold text-base shadow-2xl hover:scale-105 transform transition"
         >
-          Work With Us ✨
+          Work With Us 
         </a>
       </div>
 
@@ -414,13 +433,12 @@ function ProjectVideoCard({ item, index, userInteracted, videoRef, isLazy }) {
       />
 
       <div className="absolute left-3 top-3 px-2 py-1 rounded-md bg-black/40 text-xs text-[#eaeaea] backdrop-blur-sm">
-        {item.emoji}
+        {/* small icon badge (replaced emoji) */}
+        <Clapperboard className="w-4 h-4 inline-block" />
       </div>
 
       <div className="absolute right-3 bottom-3 px-2 py-1 rounded-md bg-black/40 text-xs text-white/80 hidden sm:inline-flex items-center gap-2">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="opacity-90">
-          <path d="M5 3v18l15-9L5 3z" fill="#fff" />
-        </svg>
+        <Play className="w-3 h-3" />
         <span className="text-xs">Preview</span>
       </div>
     </div>
