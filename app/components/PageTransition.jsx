@@ -35,8 +35,8 @@ export default function PageTransition() {
           <Image
             src="/logo/video.gif"
             alt="Logo Animation"
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
             className="transition-video"
             unoptimized
           />
